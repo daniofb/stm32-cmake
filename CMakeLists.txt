@@ -9,7 +9,7 @@ include(arm-none-eabi)
 
 add_subdirectory(platform)
 
-set(CMAKE_EXE_LINKER_FLAGS 
+set(CMAKE_EXE_LINKER_FLAGS
 	"${CMAKE_EXE_LINKER_FLAGS} -T${PLATFORM_LINKER_SCRIPT}"
 )
 
@@ -43,12 +43,12 @@ else()
 		COMMAND ${ST_FLASH} --reset write ${PROJECT_NAME}.bin ${FLASH_ADDR} 2>&1 | tail -2
 	)
 
-	add_custom_target(read 
+	add_custom_target(read
 		COMMAND ${ST_FLASH} --reset read ${PROJECT_NAME}_read.bin ${FLASH_ADDR} 2>&1 | tail -2
 	)
 
 	add_custom_target(erase
 		COMMAND ${ST_FLASH} --reset erase
 	)
-
+	set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${PROJECT_NAME}.bin)
 endif(NOT ST_FLASH)
