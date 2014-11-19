@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../platform_for_tests/include/core_cm0plus.h
+stdint.h
+-
+
+../platform_for_tests/include/stm32l053xx.h
+core_cm0plus.h
+../platform_for_tests/include/core_cm0plus.h
+system_stm32l0xx.h
+../platform_for_tests/include/system_stm32l0xx.h
+stdint.h
+-
+
+../platform_for_tests/include/system_stm32l0xx.h
+stdint.h
+-
+
+/projects/github/mine/stm32-cmake/src/main.c
+stm32l053xx.h
+/projects/github/mine/stm32-cmake/src/stm32l053xx.h
+system_stm32l0xx.h
+/projects/github/mine/stm32-cmake/src/system_stm32l0xx.h
+stdio.h
+-
+
