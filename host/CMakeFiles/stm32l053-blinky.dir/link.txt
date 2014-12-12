@@ -1,1 +1,0 @@
-/usr/bin/cc      CMakeFiles/stm32l053-blinky.dir/src/main.c.o  -o stm32l053-blinky -rdynamic platform_for_tests/libplatform_for_tests.a 

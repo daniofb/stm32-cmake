@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/runUnitTests.dir/src/testgtest.cxx.o  -o runUnitTests -rdynamic -lgtest -lgtest_main 

@@ -1,3 +1,0 @@
-/projects/github/mine/stm32-cmake/host/platform_for_tests/CMakeFiles/platform_for_tests.dir
-/projects/github/mine/stm32-cmake/host/platform_for_tests/CMakeFiles/runUnitTests.dir
-/projects/github/mine/stm32-cmake/host/CMakeFiles/stm32l053-blinky.dir

@@ -1,2 +1,0 @@
-/usr/bin/ar cr libplatform_for_tests.a  CMakeFiles/platform_for_tests.dir/src/system_stm32l0xx.c.o
-/usr/bin/ranlib libplatform_for_tests.a
