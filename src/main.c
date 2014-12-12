@@ -1,6 +1,6 @@
 #include "stm32l053xx.h"
 #include "system_stm32l0xx.h"
-#include <stdio.h>
+// #include <stdio.h>
 
 volatile uint32_t msTicks = 0;                                       /* Variable to store millisecond ticks */
 
@@ -17,13 +17,13 @@ int main(void)
 
     // SysTick_Config(SystemCoreClock / 1000);      /* Configure SysTick to generate an interrupt every millisecond */
 
-    printf("0x%X\n", GPIOA->MODER);
-    printf("0x%X\n", RCC->IOPENR);
+    // printf("0x%X\n", GPIOA->MODER);
+    // printf("0x%X\n", RCC->IOPENR);
     RCC->IOPENR |= RCC_IOPENR_GPIOAEN;
-    printf("0x%X\n", RCC->IOPENR);
+    // printf("0x%X\n", RCC->IOPENR);
 
     GPIOA->MODER |= (GPIO_MODER_MODE5_0) ;
-    /* Configure PC8 and PC9 in output  mode  */
+     // Configure PC8 and PC9 in output  mode
 
     GPIOA->MODER &= ~(3 << (2 * 5));
     GPIOA->MODER |= 1 << (2 * 5);
@@ -36,6 +36,6 @@ int main(void)
             msTicks = every_one_sec;
         }
     // }
-    printf("0x%X\n", GPIOA->MODER);
+    // printf("0x%X\n", GPIOA->MODER);
     return 0;
 }
