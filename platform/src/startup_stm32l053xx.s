@@ -14,7 +14,7 @@
   *            After Reset the Cortex-M0+ processor is in Thread mode,
   *            priority is Privileged, and the Stack is set to Main.
   ******************************************************************************
-  * 
+  *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
   *   1. Redistributions of source code must retain the above copyright notice,
@@ -47,6 +47,7 @@
 
 .global  g_pfnVectors
 .global  Default_Handler
+.global _init
 
 /* start address for the initialization values of the .data section.
 defined in linker script */
@@ -63,7 +64,7 @@ defined in linker script */
     .section  .text.Reset_Handler
   .weak  Reset_Handler
   .type  Reset_Handler, %function
-Reset_Handler:  
+Reset_Handler:
   ldr   r0, =_estack
   mov   sp, r0          /* set stack pointer */
 
@@ -99,13 +100,15 @@ LoopFillZerobss:
 
 /* Call the clock system intitialization function.*/
   bl  SystemInit
-/* Call static constructors */
-    bl __libc_init_array
+# /* Call static constructors */
+   bl __libc_init_array
+   _init:
 /* Call the application's entry point.*/
   bl  main
 
 LoopForever:
     b LoopForever
+
 
 
 .size  Reset_Handler, .-Reset_Handler

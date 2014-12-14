@@ -9,5 +9,8 @@ set(PLATFORM_LINKER_SCRIPT
 	PARENT_SCOPE
 )
 
+add_library(platform src/startup_stm32l053xx.s src/system_stm32l0xx.c)
+
 include_directories(include cmsis)
-add_library(platform src/system_stm32l0xx.c src/startup_stm32l053xx.s)
+
+target_include_directories (platform PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

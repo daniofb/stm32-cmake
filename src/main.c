@@ -9,13 +9,11 @@ void SysTick_Handler(void)
     msTicks++;
 }
 
-// void _init(void){}
-
 int main(void)
 {
-    // SystemInit();
+    SystemInit();
 
-    // SysTick_Config(SystemCoreClock / 1000);      /* Configure SysTick to generate an interrupt every millisecond */
+    SysTick_Config(SystemCoreClock / 1000);      /* Configure SysTick to generate an interrupt every millisecond */
 
     // printf("0x%X\n", GPIOA->MODER);
     // printf("0x%X\n", RCC->IOPENR);
@@ -28,14 +26,14 @@ int main(void)
     GPIOA->MODER &= ~(3 << (2 * 5));
     GPIOA->MODER |= 1 << (2 * 5);
     int every_one_sec = msTicks;
-    // while (1)
-    // {
+    while (1)
+    {
         if(msTicks == (1000 + every_one_sec))
         {
             GPIOA->ODR ^= 0x20;
             msTicks = every_one_sec;
         }
-    // }
+    }
     // printf("0x%X\n", GPIOA->MODER);
     return 0;
 }

@@ -1,6 +1,9 @@
 cmake_minimum_required( VERSION 3.0 FATAL_ERROR )
+
 project( "stm32l053-blinky" )
 # project( "stm32l053-blinky" C ASM )
+
+enable_language(ASM)
 
 list( APPEND CMAKE_MODULE_PATH
 	${CMAKE_SOURCE_DIR}/cmake/Modules

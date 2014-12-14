@@ -22,7 +22,7 @@ SET(CMAKE_CXX_FLAGS "-mthumb -mcpu=cortex-m0plus" CACHE INTERNAL "cxx compiler f
 SET(CMAKE_ASM_FLAGS "-mthumb -mcpu=cortex-m0plus" CACHE INTERNAL "asm compiler flags")
 
 # SET(CMAKE_EXE_LINKER_FLAGS "-nostartfiles -Wl,-Map=mmap.map,--cref,--no-warn-mismatch -mthumb -mcpu=cortex-m0plus" CACHE INTERNAL "exe link flags")
-set(CMAKE_EXE_LINKER_FLAGS "-nostartfiles -mcpu=cortex-m0 -mthumb" CACHE INTERNAL "exe link flags")
+set(CMAKE_EXE_LINKER_FLAGS "-nostartfiles -mcpu=cortex-m0plus -mthumb" CACHE INTERNAL "exe link flags")
 
 set(CMAKE_FIND_ROOT_PATH "/usr/arm-none-eabi")
 
